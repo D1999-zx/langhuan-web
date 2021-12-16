@@ -68,9 +68,9 @@ export default {
     },
     handleCommand(command){
       if('1' === command){
-        this.$router.push('/userIndex')
+        this.$router.push('/user/index')
       }else if('2' === command){
-        this.$router.push('/userSettings')
+        this.$router.push('/user/settings')
       }else{
         utils.clearMess(),
         this.$router.push('/login')
@@ -90,6 +90,7 @@ export default {
 }
 
 .navigation-userinfo{
-  display: flex;justify-content: right
+  display: flex;
+  justify-content: right
 }
 </style>
