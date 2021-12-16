@@ -1,15 +1,16 @@
 <template>
   <div>
-      <navigation> </navigation>
+    <navigation> </navigation>
+    设置
   </div>
 </template>
 
 <script>
 
-import navigation from "../components/navigation";
+import navigation from "../../components/navigation";
 
 export default {
-  name: 'index',
+  name: "settings.vue",
   components: {
     navigation
   },
@@ -18,3 +19,7 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+
+</style>

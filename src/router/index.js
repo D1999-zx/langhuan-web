@@ -8,7 +8,7 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    redirect:'/header'
+    redirect:'/index'
   },
   {
     path: '/login',
@@ -21,9 +21,14 @@ const routes = [
     component: () => import('../views/index')
   },
   {
-    path: '/header',
-    name: '页眉',
-    component: () => import('../views/common/header')
+    path: '/userIndex',
+    name: '我的主页',
+    component: () => import('../views/user/index')
+  },
+  {
+    path: '/userSettings',
+    name: '用户设置',
+    component: () => import('../views/user/settings')
   }
 ]
 
