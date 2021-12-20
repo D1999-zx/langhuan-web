@@ -73,7 +73,7 @@ export default {
         if (valid) {
           postRequest('/login/login' ,this.loginForm).then(result => {
             utils.setToken(result.token.token.token)
-            getRequest('/user/user?mobile=' + this.loginForm.mobile , {}).then(result => {
+            getRequest('/user/user', {}).then(result => {
               console.log(result.user);
               store.state.user = result.user;
             })

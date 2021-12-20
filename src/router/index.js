@@ -8,7 +8,7 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    redirect:'/index'
+    redirect:'/login'
   },
   {
     path: '/login',
@@ -31,34 +31,39 @@ const routes = [
     component: () => import('../views/user/settings'),
     children:[
       {
+        path: '/settings/user',
+        name: '账号管理',
+        component: () => import('../components/settings/settingsUser')
+      },
+      {
         path: '/password/edit',
         name: '修改密码',
-        component: () => import('../views/user/passwordEdit')
+        component: () => import('../components/settings/passwordEdit')
       },
       {
         path: '/mobile/edit',
         name: '修改手机',
-        component: () => import('../views/user/mobileEdit')
+        component: () => import('../components/settings/mobileEdit')
       },
       {
         path: '/mail/edit',
         name: '修改邮箱',
-        component: () => import('../views/user/mailEdit')
+        component: () => import('../components/settings/mailEdit')
       },
       {
         path: '/account/bind',
         name: '第三方绑定',
-        component: () => import('../views/user/accountBind')
+        component: () => import('../components/settings/accountBind')
       },
       {
         path: '/history/login',
         name: '登录历史',
-        component: () => import('../views/user/historyLogin')
+        component: () => import('../components/settings/historyLogin')
       },
       {
         path: '/account/logout',
         name: '注销账户',
-        component: () => import('../views/user/accountLogout')
+        component: () => import('../components/settings/accountLogout')
       }
     ]
   }
