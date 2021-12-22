@@ -52,12 +52,15 @@
 
 <script>
 
+import {deleteRequest} from "@/assets/js/api";
 import utils from "../assets/js/utils";
+import store from '../store';
 
 export default {
   name: "navigation.vue",
   data() {
     return {
+      id: store.state.user.id,
       activeIndex: '1',
       activeIndex2: '1'
     };
@@ -72,8 +75,11 @@ export default {
       }else if('2' === command){
         this.$router.push('/user/settings')
       }else{
-        utils.clearMess(),
-        this.$router.push('/login')
+        console.log(this.id);
+        deleteRequest('/logout/logout?id='+this.id,{}).then(
+            utils.clearMess(),
+            this.$router.push('/login')
+        )
       }
     }
   }

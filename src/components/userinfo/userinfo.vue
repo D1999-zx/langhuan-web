@@ -1,19 +1,31 @@
 <template>
-  <div class="demo-type">
+
     <div>
-      <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" @click="open"></el-avatar>
+      <el-button type="text" @click="dialogVisible = true">点击打开 Dialog</el-button>
+
+
+        <el-dialog
+            title="提示"
+            :visible.sync="dialogVisible"
+            width="30%">
+        <span>
+          <el-upload
+              class="upload-demo"
+              drag
+              action="https://jsonplaceholder.typicode.com/posts/"
+              multiple>
+            <i class="el-icon-upload"></i>
+            <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
+            <div class="el-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div>
+          </el-upload>
+        </span>
+          <span slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+        </span>
+        </el-dialog>
     </div>
-  </div>
-<!--  <el-upload-->
-<!--      class="upload-demo"-->
-<!--      drag-->
-<!--      action="https://jsonplaceholder.typicode.com/posts/"-->
-<!--      multiple-->
-<!--      >-->
-<!--    <i class="el-icon-upload"></i>-->
-<!--    <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>-->
-<!--    <div class="el-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div>-->
-<!--  </el-upload>-->
+
 </template>
 
 <script>
@@ -21,14 +33,10 @@ export default {
   name: "userinfo.vue",
   data() {
     return {
-      flag: false
+      dialogVisible: false
     };
   },
-  created() {
-  },
-  methods :{
-    open(){
-    }
+  methods: {
   }
 }
 </script>

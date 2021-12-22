@@ -6,7 +6,7 @@
       <el-col :span="12" :offset="6" >
         <el-tabs :tab-position="tabPosition" @tab-click="tabclick">
           <el-tab-pane label="个人资料">
-            个人资料
+            <router-view ></router-view>
           </el-tab-pane>
           <el-tab-pane label="账号管理">
             <router-view ></router-view>
@@ -34,6 +34,9 @@ export default {
   },
   methods: {
     tabclick(tab){
+      if(tab.label=='个人资料'){
+        this.$router.push('/user/info')
+      }
       if(tab.label=='账号管理'){
         this.$router.push('/settings/user')
       }

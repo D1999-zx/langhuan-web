@@ -21,6 +21,9 @@
     <div class="content1" v-else>
       注册
       <el-form ref="registerForm" :rules="rules" :model="registerForm" label-width="65px">
+        <el-form-item label="用户名" prop="username">
+          <el-input v-model="registerForm.username"></el-input>
+        </el-form-item>
         <el-form-item label="手机号" prop="mobile">
           <el-input v-model="registerForm.mobile"></el-input>
         </el-form-item>
@@ -53,12 +56,16 @@ export default {
         password:''
       },
       registerForm:{
+        username:'',
         mobile:'',
         password:''
       },
       rules: {
         mobile: [
           {required: true, message: '请输入手机号', trigger: 'blur'}
+        ],
+        username: [
+          {required: true, message: '请输入用户名', trigger: 'blur'}
         ],
         password: [
           {required: true, message: '请输入密码', trigger: 'blur'}

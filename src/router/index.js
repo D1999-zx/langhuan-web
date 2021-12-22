@@ -26,6 +26,11 @@ const routes = [
     component: () => import('../views/user/index')
   },
   {
+    path: '/user/info',
+    name: '我的主页',
+    component: () => import('../components/userinfo/userinfo')
+  },
+  {
     path: '/user/settings',
     name: '用户设置',
     component: () => import('../views/user/settings'),
